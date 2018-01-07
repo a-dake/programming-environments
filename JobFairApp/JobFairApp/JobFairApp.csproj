@@ -1,0 +1,340 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{88DBF22E-B3B4-4B86-BD87-D1831828503A}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>JobFairApp</RootNamespace>
+    <AssemblyName>JobFairApp</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Candidate.cs" />
+    <Compile Include="Classes\Company.cs" />
+    <Compile Include="Classes\Context.cs" />
+    <Compile Include="Classes\Interview.cs" />
+    <Compile Include="Classes\Interviewer.cs" />
+    <Compile Include="Classes\ISQLObject.cs" />
+    <Compile Include="Classes\JobFair.cs" />
+    <Compile Include="Classes\Location.cs" />
+    <Compile Include="Classes\MySQLUtils.cs" />
+    <Compile Include="Classes\Person.cs" />
+    <Compile Include="Classes\Table.cs" />
+    <Compile Include="Classes\TimeSlot.cs" />
+    <Compile Include="Classes\Venue.cs" />
+    <Compile Include="Forms\AdministratorForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdministratorForm.Designer.cs">
+      <DependentUpon>AdministratorForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddCompanyForm.designer.cs">
+      <DependentUpon>AddCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AddInterviewForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AddInterviewForm.Designer.cs">
+      <DependentUpon>AddInterviewForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CompanyProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CompanyProfile.designer.cs">
+      <DependentUpon>CompanyProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreatePerson.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreatePerson.Designer.cs">
+      <DependentUpon>CreatePerson.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateFair.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateFair.Designer.cs">
+      <DependentUpon>CreateFair.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateInterviewer.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateInterviewer.Designer.cs">
+      <DependentUpon>CreateInterviewer.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateInterviewTimes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateInterviewTimes.Designer.cs">
+      <DependentUpon>CreateInterviewTimes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\CreateVenue.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\CreateVenue.Designer.cs">
+      <DependentUpon>CreateVenue.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LocationsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LocationsForm.Designer.cs">
+      <DependentUpon>LocationsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\LoginForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\LoginForm.Designer.cs">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\printForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\printForm.Designer.cs">
+      <DependentUpon>printForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\SearchCompanyForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\SearchCompanyForm.Designer.cs">
+      <DependentUpon>SearchCompanyForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobFairDataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobFairDataSet6.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="OpeningForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="OpeningForm.Designer.cs">
+      <DependentUpon>OpeningForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TablesForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TablesForm.Designer.cs">
+      <DependentUpon>TablesForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\UserProfile.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\UserProfile.Designer.cs">
+      <DependentUpon>UserProfile.cs</DependentUpon>
+    </Compile>
+    <Compile Include="JobFairDataSet.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobFairDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JobFairDataSet1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobFairDataSet1.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JobFairDataSet2.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobFairDataSet2.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JobFairDataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobFairDataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JobFairDataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobFairDataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="JobFairDataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>JobFairDataSet5.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Forms\AdministratorForm.resx">
+      <DependentUpon>AdministratorForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddCompanyForm.resx">
+      <DependentUpon>AddCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AddInterviewForm.resx">
+      <DependentUpon>AddInterviewForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CompanyProfile.resx">
+      <DependentUpon>CompanyProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreatePerson.resx">
+      <DependentUpon>CreatePerson.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateInterviewer.resx">
+      <DependentUpon>CreateInterviewer.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateInterviewTimes.resx">
+      <DependentUpon>CreateInterviewTimes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\CreateVenue.resx">
+      <DependentUpon>CreateVenue.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LocationsForm.resx">
+      <DependentUpon>LocationsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\LoginForm.resx">
+      <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\printForm.resx">
+      <DependentUpon>printForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\SearchCompanyForm.resx">
+      <DependentUpon>SearchCompanyForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="OpeningForm.resx">
+      <DependentUpon>OpeningForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TablesForm.resx">
+      <DependentUpon>TablesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\UserProfile.resx">
+      <DependentUpon>UserProfile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="JobFairDataSet.xsc">
+      <DependentUpon>JobFairDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JobFairDataSet.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JobFairDataSet.xss">
+      <DependentUpon>JobFairDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet1.xsc">
+      <DependentUpon>JobFairDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet1.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JobFairDataSet1.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JobFairDataSet1.xss">
+      <DependentUpon>JobFairDataSet1.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet2.xsc">
+      <DependentUpon>JobFairDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet2.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JobFairDataSet2.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JobFairDataSet2.xss">
+      <DependentUpon>JobFairDataSet2.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet3.xsc">
+      <DependentUpon>JobFairDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JobFairDataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JobFairDataSet3.xss">
+      <DependentUpon>JobFairDataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet4.xsc">
+      <DependentUpon>JobFairDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JobFairDataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JobFairDataSet4.xss">
+      <DependentUpon>JobFairDataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet5.xsc">
+      <DependentUpon>JobFairDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JobFairDataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JobFairDataSet5.xss">
+      <DependentUpon>JobFairDataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet6.xsc">
+      <DependentUpon>JobFairDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="JobFairDataSet6.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>JobFairDataSet6.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="JobFairDataSet6.xss">
+      <DependentUpon>JobFairDataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
